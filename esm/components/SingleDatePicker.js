@@ -248,15 +248,17 @@ var SingleDatePicker = /*#__PURE__*/function (_ref) {
   };
 
   _proto.onFocusOut = function onFocusOut(e) {
-    var onFocusChange = this.props.onFocusChange; // In cases where **relatedTarget** is not null, it points to the right
-    // element here. However, in cases where it is null (such as clicking on a
-    // specific day) or it is **document.body** (IE11), the appropriate value is **event.target**.
-    //
-    // We handle both situations here by using the ` || ` operator to fallback
-    // to *event.target** when **relatedTarget** is not provided.
+    var onFocusChange = this.props.onFocusChange; // // In cases where **relatedTarget** is not null, it points to the right
+    // // element here. However, in cases where it is null (such as clicking on a
+    // // specific day) or it is **document.body** (IE11), the appropriate value is **event.target**.
+    // //
+    // // We handle both situations here by using the ` || ` operator to fallback
+    // // to *event.target** when **relatedTarget** is not provided.
+    // const relatedTarget = e.relatedTarget === document.body
+    //   ? e.target
+    //   : (e.relatedTarget || e.target);
+    // if (this.dayPickerContainer.contains(relatedTarget)) return;
 
-    var relatedTarget = e.relatedTarget === document.body ? e.target : e.relatedTarget || e.target;
-    if (this.dayPickerContainer.contains(relatedTarget)) return;
     onFocusChange({
       focused: false
     });
