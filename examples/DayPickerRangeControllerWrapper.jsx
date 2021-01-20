@@ -54,6 +54,7 @@ const propTypes = forbidExtraProps({
   renderDayContents: PropTypes.func,
   renderKeyboardShortcutsButton: PropTypes.func,
   renderKeyboardShortcutsPanel: PropTypes.func,
+  onBlur: PropTypes.func,
 
   // i18n
   monthFormat: PropTypes.string,
@@ -107,6 +108,9 @@ const defaultProps = {
 
   // internationalization
   monthFormat: 'MMMM YYYY',
+
+  // accessibility
+  onBlur() {},
 };
 
 class DayPickerRangeControllerWrapper extends React.Component {

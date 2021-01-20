@@ -293,6 +293,7 @@ var DayPickerRangeController = /*#__PURE__*/function (_ref) {
       disablePrev: _this.shouldDisableMonthNavigation(props.minDate, currentMonth),
       disableNext: _this.shouldDisableMonthNavigation(props.maxDate, currentMonth)
     };
+    _this.onBlur = _this.onBlur.bind(_assertThisInitialized(_this));
     _this.onDayClick = _this.onDayClick.bind(_assertThisInitialized(_this));
     _this.onDayMouseEnter = _this.onDayMouseEnter.bind(_assertThisInitialized(_this));
     _this.onDayMouseLeave = _this.onDayMouseLeave.bind(_assertThisInitialized(_this));
@@ -556,6 +557,11 @@ var DayPickerRangeController = /*#__PURE__*/function (_ref) {
     }
   };
 
+  _proto.onBlur = function onBlur(e) {
+    var onBlur = this.props.onBlur;
+    onBlur(e);
+  };
+
   _proto.onDayClick = function onDayClick(day, e) {
     var _this$props2 = this.props,
         keepOpenOnDateSelect = _this$props2.keepOpenOnDateSelect,
@@ -671,8 +677,6 @@ var DayPickerRangeController = /*#__PURE__*/function (_ref) {
         endDate: endDate
       });
     }
-
-    onBlur();
   };
 
   _proto.onDayMouseEnter = function onDayMouseEnter(day) {
@@ -1293,7 +1297,9 @@ var DayPickerRangeController = /*#__PURE__*/function (_ref) {
         visibleDays = _this$state7.visibleDays,
         disablePrev = _this$state7.disablePrev,
         disableNext = _this$state7.disableNext;
-    return /*#__PURE__*/React.createElement(DayPicker, {
+    return /*#__PURE__*/React.createElement("div", {
+      onBlur: this.onBlur
+    }, /*#__PURE__*/React.createElement(DayPicker, {
       orientation: orientation,
       enableOutsideDays: enableOutsideDays,
       modifiers: visibleDays,
@@ -1352,7 +1358,7 @@ var DayPickerRangeController = /*#__PURE__*/function (_ref) {
       noBorder: noBorder,
       transitionDuration: transitionDuration,
       horizontalMonthPadding: horizontalMonthPadding
-    });
+    }));
   };
 
   return DayPickerRangeController;
