@@ -195,9 +195,8 @@ class DateInput extends React.PureComponent {
       theme: { reactDates },
     } = this.props;
 
-    const value = dateString || displayValue || '';
+    const value = focused ? this.inputRef && this.inputRef.value || displayValue || '' : displayValue || this.inputRef && this.inputRef.value || '';
     const screenReaderMessageId = `DateInput__screen-reader-message-${id}`;
-
     const withFang = showCaret && focused;
 
     const inputHeight = getInputHeight(reactDates, small);

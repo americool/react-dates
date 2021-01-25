@@ -143,6 +143,12 @@ class DateRangePickerWrapper extends React.Component {
       'stateDateWrapper',
     ]);
 
+   const handleClear = () => {
+    this.onDatesChange({ undefined, undefined });
+    document.querySelector(`input[id='${START_DATE}']`).value = '';
+    document.querySelector(`input[id='${END_DATE}']`).value = '';
+  };
+
     return (
       <div>
         <DateRangePicker
@@ -153,6 +159,7 @@ class DateRangePickerWrapper extends React.Component {
           startDate={startDate}
           endDate={endDate}
         />
+        <button onClick={handleClear}>x</button>
       </div>
     );
   }
