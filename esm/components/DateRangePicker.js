@@ -16,7 +16,6 @@ import { forbidExtraProps } from 'airbnb-prop-types';
 import { addEventListener } from 'consolidated-events';
 import isTouchDevice from 'is-touch-device';
 import OutsideClickHandler from 'react-outside-click-handler';
-import { darken } from 'color2k';
 import DateRangePickerShape from '../shapes/DateRangePickerShape';
 import { DateRangePickerPhrases } from '../defaultPhrases';
 import getResponsiveContainerStyles from '../utils/getResponsiveContainerStyles';
@@ -669,11 +668,9 @@ export default withStyles(function (_ref2) {
       padding: 15,
       zIndex: zIndex + 2,
       ':hover': {
-        color: darken(color.core.grayLighter, 0.1),
         textDecoration: 'none'
       },
       ':focus': {
-        color: darken(color.core.grayLighter, 0.1),
         textDecoration: 'none'
       }
     },

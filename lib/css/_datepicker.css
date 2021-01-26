@@ -149,7 +149,6 @@
 }
 .SingleDatePicker_closeButton:focus,
 .SingleDatePicker_closeButton:hover {
-  color: #b0b3b4;
   text-decoration: none
 }
 .SingleDatePicker_closeButton_svg {
@@ -876,7 +875,6 @@
 }
 .DateRangePicker_closeButton:focus,
 .DateRangePicker_closeButton:hover {
-  color: #b0b3b4;
   text-decoration: none
 }
 .DateRangePicker_closeButton_svg {
